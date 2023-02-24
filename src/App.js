@@ -1,10 +1,13 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+import Contact from './pages/Contact';
+import Home from "./pages/Home.js"
 function App() {
+  
   return (
     <>
-    <h1>THis is WTL project</h1>
+    Hello my name is {name}
+    App
     </>
   );
 }
