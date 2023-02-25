@@ -7,9 +7,6 @@ var jwt = require('jsonwebtoken')
 const JWT_SECRET = "thisisajwtsecret";
 var fetchuser = require("../middleware/fetchuser")
 
-
-
-
 //Create user route
 router.post("/createuser",[
     body('email',"Enter Valid Email").isEmail(),
@@ -17,7 +14,6 @@ router.post("/createuser",[
     body('password',"Min Password lenght 5 is required").isLength({ min: 5 })
     ], async (req,res)=>{
         // res.status(200).send({body:req.body});
-
         // If Errors then return bad request
         let success = false;
         const errors = validationResult(req);
