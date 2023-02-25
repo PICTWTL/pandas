@@ -1,15 +1,14 @@
-// import logo from './logo.svg';
-import './App.css';
-import Contact from './pages/Contact';
-import Home from "./pages/Home.js"
-function App() {
-  
+import React from "react";
+import Admin from "./pages/Admin";
+
+import "./App.css";
+
+const App = () => {
   return (
-    <>
-    Hello my name is {name}
-    App
-    </>
+    <div>
+      <Admin />
+    </div>
   );
-}
+};
 
 export default App;
