@@ -1,0 +1,111 @@
+body
+{
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+h1 {
+  line-height: 44px;
+}
+.navbarr {
+  display: flex;
+  padding-top: 5px;
+  padding-right: 22px;
+  padding-left: 22px;
+  justify-content: space-between;
+  align-items: center;
+    height: 60px;
+  .heading {
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 44px;
+    margin-top: 20px;
+  }
+  .menu-items {
+    display: flex;
+    width: 500px;
+    height: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    grid-column-gap: 25px;
+  }
+  .w-button {
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: black;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+  }
+}
+.hero-with-image {
+  position: relative;
+  padding: 80px 30px;
+  border-bottom: 1px solid #e4ebf3;
+  background-color: #f5f7fa;
+  background-image: url(../Images/sky-wallpaper.jpg);
+  background-position: 0px 0px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .container-2 {
+    width: 100%;
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+    .hero-wrapper-two {
+      display: flex;
+      max-width: 750px;
+      margin-right: auto;
+      margin-left: auto;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      .heading-2 {
+        position: static;
+        display: block;
+        min-height: auto;
+        min-width: auto;
+        float: none;
+        font-family: Montserrat, sans-serif;
+        color: #fff;
+        font-size: 44px;
+        text-align: center;
+
+        text-transform: uppercase;
+        .big-h1 {
+          display: block;
+          margin-top: 16px;
+          font-size: 96px;
+        }
+      }
+      .button-primary{
+        margin-top: 60px;
+    padding: 12px 25px;
+    background-color: #fff;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    color: #000;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+      }
+      .w-button {
+        display: inline-block;
+        padding: 9px 15px;
+        background-color: white;
+        color: black;
+        border: 0;
+        line-height: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 0;
+      }
+    }
+  }
+}

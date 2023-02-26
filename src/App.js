@@ -3,10 +3,12 @@ import React from "react";
 
 import "./App.css";
 import Admin from "./pages/Admin";
+import { Landing } from "./pages/Landing";
+
 const App = () => {
   return (
     <>
-      <Admin/>
+      <Landing/>
     </>
       
     
