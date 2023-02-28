@@ -4,11 +4,12 @@ import React from "react";
 import "./App.css";
 import Admin from "./pages/Admin";
 import { Landing } from "./pages/Landing";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
     <>
-      <Landing/>
+      <Login/>
     </>
       
     
