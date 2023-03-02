@@ -1,7 +1,13 @@
 import React from 'react';
 import { LandingNavbar } from '../components/LandingNavbar';
 import '../styles/landingNavbar.scss'
+import { Navigate, useNavigate } from 'react-router-dom';
 export const Landing = () => {
+  let navigate = useNavigate();
+
+  const handleClick = ()=>{
+      navigate('/signup')
+  }
   return (
     <div>
     <LandingNavbar />
@@ -12,7 +18,7 @@ export const Landing = () => {
                     Lets give your brand a
                     <span className='big-h1'>headstart</span>
                 </h1>
-                <button className='button-primary w-button'>Get Started</button>
+                <button onClick={handleClick} className='button-primary w-button'>Get Started</button>
             </div>
         </div>
     </section>

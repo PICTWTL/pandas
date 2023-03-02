@@ -9,7 +9,10 @@ import Signup from "./pages/Signup";
 import Alert from "./components/Alert";
 import { LandingNavbar } from "./components/LandingNavbar";
 import Home from "./pages/Home";
-import { createBrowserRouter } from "react-router-dom";
+// import { Landing } from "./pages/Landing";
+// import { createBrowserRouter,Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 const App = () => {
   const [alert, setAlert] = useState(null);
@@ -24,9 +27,20 @@ const App = () => {
   };
   return (
     <>
-      <LandingNavbar />
-      <Alert alert={alert} />
-      <Signup showAlert={showAlert} />
+
+    {/* <Admin></Admin> */}
+    <Router>
+    {/* <Alert alert={alert}/> */}
+
+      <Routes>
+              <Route exact path="/" element={<Landing></Landing>} />
+              <Route exact path="/admin" element={<Admin showAlert={showAlert}/>} />
+              <Route exact path="/signup" element={<Signup showAlert={showAlert}/>} />
+              <Route exact path="/login" element={<Login showAlert={showAlert}/>} />
+
+            </Routes>
+      
+      </Router>
     </>
   );
 };

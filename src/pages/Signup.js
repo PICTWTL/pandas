@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { LandingNavbar } from "../components/LandingNavbar";
 import "../styles/landingNavbar.scss";
 import "../styles/login.scss";
-
+import Alert from "../components/Alert";
 // require("dotenv").config();
 const host = "http://localhost:8080";
 const Signup = (props) => {
+    const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
@@ -43,7 +44,7 @@ const Signup = (props) => {
         //Save the auth token and redirect
         props.showAlert("Signed In Successfully", "success");
         localStorage.setItem("token", json.authtoken);
-        // navigate("/");
+        navigate("/admin");
       } else {
         // alert("Invalid Credentials")
         props.showAlert("Invalid Credentials", "danger");
@@ -54,6 +55,9 @@ const Signup = (props) => {
   };
   return (
     <div>
+      
+      <LandingNavbar />
+      {/* <Alert alert={alert} /> */}
       <section className="pd-0">
         <div className="div-block-2  mb-3 pt-0">
           <h1 className="heading-3">Signup</h1>

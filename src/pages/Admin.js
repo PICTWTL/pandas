@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 
 import Login from "./Login";
 import Home from "./Home";
@@ -9,13 +9,25 @@ import Single from "./Single";
 import { productInputs, userInputs } from "./formSource";
 import { DarkModeContext } from "../context/darkModeContext";
 import "../styles/dark.scss";
-
+import { Navigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Admin = () => {
+  const navigate = useNavigate();
   const { darkMode } = useContext(DarkModeContext);
-
+  useEffect(() => {
+    if(localStorage.getItem('token'))
+    {
+      // getAllNotes();
+    }
+    else{
+      navigate('/signup'); 
+    }
+  }, []);
   return (
     <div className={darkMode ? "dark" : ""}>
-      <BrowserRouter>
+      <Home></Home>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/">
             <Route index element={<Home />} />
@@ -38,7 +50,7 @@ const Admin = () => {
             </Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 };

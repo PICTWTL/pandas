@@ -1,6 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const LandingNavbar = () => {
+  const navigate = useNavigate();
+  const redirectLogin = ()=>{
+    navigate("/login")
+  }
   return (
     <div className='navbarr'>
         <h1 className='heading'>Website</h1>
@@ -10,7 +15,7 @@ export const LandingNavbar = () => {
             <div>Contact</div>
         </div>
         <div>
-            <button className='w-button'>Log In</button>
+            <button onClick={redirectLogin} className='w-button'>Log In</button>
         </div>
     </div>
   )
