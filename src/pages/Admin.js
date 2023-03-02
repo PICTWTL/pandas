@@ -23,7 +23,7 @@ const Admin = () => {
     else{
       navigate('/signup'); 
     }
-  }, []);
+  }, [Home]);
   return (
     <div className={darkMode ? "dark" : ""}>
       <Home></Home>
