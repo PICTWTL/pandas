@@ -41,12 +41,12 @@ const Signup = (props) => {
       console.log(json);
       if (json.success) {
         //Save the auth token and redirect
-        // props.showAlert("Signed In Successfully", "success");
+        props.showAlert("Signed In Successfully", "success");
         localStorage.setItem("token", json.authtoken);
         // navigate("/");
       } else {
         // alert("Invalid Credentials")
-        // props.showAlert("Invalid Credentials", "danger");
+        props.showAlert("Invalid Credentials", "danger");
       }
     } catch (error) {
       console.log(error);

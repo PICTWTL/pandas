@@ -8,22 +8,25 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Alert from "./components/Alert";
 import { LandingNavbar } from "./components/LandingNavbar";
+import Home from "./pages/Home";
+import { createBrowserRouter } from "react-router-dom";
+
 const App = () => {
   const [alert, setAlert] = useState(null);
-  const showAlert = (message, type)=>{
+  const showAlert = (message, type) => {
     setAlert({
       msg: message,
-      type: type
-    })
+      type: type,
+    });
     setTimeout(() => {
-        setAlert(null);
+      setAlert(null);
     }, 1500);
-}
+  };
   return (
     <>
       <LandingNavbar />
-      <Alert alert={alert}/>
-      <Signup showAlert={showAlert}/>
+      <Alert alert={alert} />
+      <Signup showAlert={showAlert} />
     </>
   );
 };
