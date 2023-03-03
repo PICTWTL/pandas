@@ -13,7 +13,8 @@ import Home from "./pages/Home";
 // import { createBrowserRouter,Router } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
+import { ManageAccounts } from "@mui/icons-material";
+import Posts from "./pages/Posts";
 
 const App = () => {
   const [alert, setAlert] = useState(null);
@@ -28,19 +29,31 @@ const App = () => {
   };
   return (
     <>
+      {/* <Admin></Admin> */}
+      <Router>
+        {/* <Alert alert={alert}/> */}
 
-    {/* <Admin></Admin> */}
-    <Router>
-    {/* <Alert alert={alert}/> */}
-
-      <Routes>
-              <Route exact path="/" element={<Landing></Landing>} />
-              <Route exact path="/admin" element={<Admin showAlert={showAlert}/>} />
-              <Route exact path="/signup" element={<Signup showAlert={showAlert}/>} />
-              <Route exact path="/login" element={<Login showAlert={showAlert}/>} />
-            </Routes>
+        <Routes>
+          <Route exact path="/" element={<Landing></Landing>} />
+          <Route exact path="/admin/">
+            <Route index element={<Admin showAlert={showAlert} />} />
+            <Route path="configure" element={<Admin />} />
+            <Route path="posts" element={<Admin />} />
+            <Route path="profile" element={<Admin />} />
+          </Route>
+          <Route
+            exact
+            path="/signup"
+            element={<Signup showAlert={showAlert} />}
+          />
+          <Route
+            exact
+            path="/login"
+            element={<Login showAlert={showAlert} />}
+          />
+        </Routes>
       </Router>
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };

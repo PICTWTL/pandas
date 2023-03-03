@@ -37,13 +37,13 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
+        Add New Post
         <Link
           to="/users/new"
           style={{ textDecoration: "none" }}
           className="link"
         >
-          New User
+          New Post
         </Link>
       </div>
       <DataGrid

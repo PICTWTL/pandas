@@ -1,0 +1,19 @@
+.posts {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+
+  .post_container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+  }
+
+  .datatable-cont {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}

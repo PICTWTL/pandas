@@ -11,17 +11,17 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Sidebar = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { dispatch } = useContext(DarkModeContext);
-  const handleLogout = ()=>{
-    console.log("handleLogout")
-    localStorage.removeItem('token');
+  const handleLogout = () => {
+    console.log("handleLogout");
+    localStorage.removeItem("token");
     toast.success("Logged Out Successfully");
-    navigate("/login")
-  }
+    navigate("/login");
+  };
   return (
     <div className="sidebar">
       <div className="top">
@@ -40,14 +40,14 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className="title">LISTS</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/admin/posts" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineOutlinedIcon className="icon" />
-              <span>Users</span>
+              <span>Posts</span>
             </li>
           </Link>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <li>
+          {/* <Link to="/" style={{ textDecoration: "none" }}> */}
+          {/* <li>
               <ShoppingBagIcon className="icon" />
               <span>Products</span>
             </li>
@@ -59,13 +59,21 @@ const Sidebar = () => {
           <li>
             <LocalShippingIcon className="icon" />
             <span>Delivery</span>
-          </li>
-          
+          </li> */}
+
           <p className="title">USER</p>
-          <li>
-            <AccountBoxIcon className="icon" />
-            <span>Profile</span>
-          </li>
+          <Link to="/admin/configure" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountBoxIcon className="icon" />
+              <span>Configure</span>
+            </li>
+          </Link>
+          <Link to="/admin/profile" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountBoxIcon className="icon" />
+              <span>Profile</span>
+            </li>
+          </Link>
           <li onClick={handleLogout}>
             <LogoutIcon className="icon" />
             <span>Logout</span>

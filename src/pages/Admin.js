@@ -16,14 +16,15 @@ const Admin = () => {
   const navigate = useNavigate();
   const { darkMode } = useContext(DarkModeContext);
   useEffect(() => {
-    if(localStorage.getItem('token'))
-    {
+    if (localStorage.getItem("token")) {
       // getAllNotes();
-    }
-    else{
-      navigate('/signup'); 
+    } else {
+      navigate("/signup");
     }
   }, [Home]);
+  // const url = Location.name;
+  const url = window.location.pathname;
+  console.log(url);
   return (
     <div className={darkMode ? "app dark" : "app"}>
       <Home></Home>
