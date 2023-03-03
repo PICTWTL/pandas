@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 // import { Landing } from "./pages/Landing";
 // import { createBrowserRouter,Router } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 
 const App = () => {
@@ -37,10 +38,9 @@ const App = () => {
               <Route exact path="/admin" element={<Admin showAlert={showAlert}/>} />
               <Route exact path="/signup" element={<Signup showAlert={showAlert}/>} />
               <Route exact path="/login" element={<Login showAlert={showAlert}/>} />
-
             </Routes>
-      
       </Router>
+      <ToastContainer/>
     </>
   );
 };

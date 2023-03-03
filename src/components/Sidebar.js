@@ -11,12 +11,15 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LogoutIcon from "@mui/icons-material/Logout";
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Sidebar = () => {
   const navigate = useNavigate()
   const { dispatch } = useContext(DarkModeContext);
   const handleLogout = ()=>{
     console.log("handleLogout")
     localStorage.removeItem('token');
+    toast.success("Logged Out Successfully");
     navigate("/login")
   }
   return (

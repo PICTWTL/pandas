@@ -2,6 +2,9 @@ import React from "react";
 import { LandingNavbar } from "../components/LandingNavbar";
 import "../styles/login.scss";
 import "../styles/landingNavbar.scss";
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const host = "http://localhost:8080";
@@ -13,7 +16,7 @@ const Login = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
-    console.log("handle Login")
+    // console.log("handle Login")
     e.preventDefault();
     const response = await fetch(`${host}/api/auth/login`, {
       method: "POST",
@@ -30,11 +33,12 @@ const Login = (props) => {
     if (json.success) {
       //Save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
-      props.showAlert("Logged In Successfully", "success");
+      toast.success("Logged in Successfully");
       history("/admin");
     } else {
       // alert("Invalid Credentials")
-      props.showAlert("Invalid Credentials", "danger");
+      // props.showAlert("Invalid Credentials", "danger");
+      toast.error("Invalid Credentials");
     }
   };
   return (

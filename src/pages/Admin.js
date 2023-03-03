@@ -25,7 +25,7 @@ const Admin = () => {
     }
   }, [Home]);
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className={darkMode ? "app dark" : "app"}>
       <Home></Home>
       {/* <BrowserRouter>
         <Routes>

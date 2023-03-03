@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { LandingNavbar } from "../components/LandingNavbar";
 import "../styles/landingNavbar.scss";
 import "../styles/login.scss";
-import Alert from "../components/Alert";
-// require("dotenv").config();
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const host = "http://localhost:8080";
 const Signup = (props) => {
     const navigate = useNavigate();
@@ -20,10 +21,9 @@ const Signup = (props) => {
   // let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Handle Submit");
     if (credentials.password !== credentials.cpassword) {
-      //Alert Component to be added
-      props.showAlert("Confirm Password Does Not Match", "warning");
+      
+      toast.warning("Passwords Does Not Match");
       return;
     }
     const response = await fetch(`${host}/api/auth/createuser`, {
@@ -41,13 +41,11 @@ const Signup = (props) => {
       const json = await response.json();
       console.log(json);
       if (json.success) {
-        //Save the auth token and redirect
-        props.showAlert("Signed In Successfully", "success");
+        toast.success("Signed In Successfully");
         localStorage.setItem("token", json.authtoken);
         navigate("/admin");
       } else {
-        // alert("Invalid Credentials")
-        props.showAlert("Invalid Credentials", "danger");
+        toast.error(json.errors[0]?json.errors[0].msg:json.error)
       }
     } catch (error) {
       console.log(error);
@@ -114,6 +112,7 @@ const Signup = (props) => {
           </div>
         </div>
       </section>
+      {/* <ToastContainer/> */}
     </div>
   );
 };
